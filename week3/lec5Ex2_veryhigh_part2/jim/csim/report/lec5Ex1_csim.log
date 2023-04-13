@@ -1,0 +1,23 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../lec5Ex1_test_veryhigh.c in debug mode
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'emchavez' on host 'cmstrigger02.hep.wisc.edu' (Linux_x86_64 version 5.4.238-1.el7.elrepo.x86_64) on Thu Apr 13 16:47:46 CDT 2023
+INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
+INFO: [HLS 200-10] In directory '/afs/hep.wisc.edu/user/emchavez/TAC-HEP-FPGA-HLS/lec5Ex2_veryhigh_part2/jim/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_emchavez/38081681422466975503
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../lec5Ex1_veryhigh.c in debug mode
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'emchavez' on host 'cmstrigger02.hep.wisc.edu' (Linux_x86_64 version 5.4.238-1.el7.elrepo.x86_64) on Thu Apr 13 16:47:59 CDT 2023
+INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
+INFO: [HLS 200-10] In directory '/afs/hep.wisc.edu/user/emchavez/TAC-HEP-FPGA-HLS/lec5Ex2_veryhigh_part2/jim/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_emchavez/39541681422479332334
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+Comparing against output data 
+*******************************************
+PASS: The output matches the reference output!
+*******************************************
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

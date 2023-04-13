@@ -1,0 +1,370 @@
+
+
+================================================================
+== Vivado HLS Report for 'lec6Ex2a'
+================================================================
+* Date:           Thu Apr 13 17:34:53 2023
+
+* Version:        2020.1 (Build 2897737 on Wed May 27 20:21:37 MDT 2020)
+* Project:        lec6Ex2a
+* Solution:       jeff
+* Product family: kintex7
+* Target device:  xc7k160t-fbg484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.211 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       97|       97| 0.970 us | 0.970 us |   97|   97|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+        |           |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop_j   |       96|       96|        32|          -|          -|     3|    no    |
+        | + Loop_i  |       30|       30|         1|          -|          -|    30|    no    |
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      1|       -|       -|    -|
+|Expression       |        -|      0|       0|     138|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       0|     314|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      35|    -|
+|Register         |        -|      -|      34|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      1|      34|     487|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      650|    600|  202800|  101400|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|   ~0  |   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+---+-----+-----+
+    |         Instance        |        Module        | BRAM_18K| DSP48E| FF| LUT | URAM|
+    +-------------------------+----------------------+---------+-------+---+-----+-----+
+    |lec6Ex2a_mux_305_cud_U2  |lec6Ex2a_mux_305_cud  |        0|      0|  0|  157|    0|
+    |lec6Ex2a_mux_42_8bkb_U1  |lec6Ex2a_mux_42_8bkb  |        0|      0|  0|  157|    0|
+    +-------------------------+----------------------+---------+-------+---+-----+-----+
+    |Total                    |                      |        0|      0|  0|  314|    0|
+    +-------------------------+----------------------+---------+-------+---+-----+-----+
+
+    * DSP48E: 
+    +-------------------------+----------------------+--------------+
+    |         Instance        |        Module        |  Expression  |
+    +-------------------------+----------------------+--------------+
+    |lec6Ex2a_mac_muladEe_U3  |lec6Ex2a_mac_muladEe  | i0 + i1 * i2 |
+    +-------------------------+----------------------+--------------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |mul_ln209_1_fu_1336_p2   |     *    |      0|  0|   8|           2|           2|
+    |tmp_V_fu_1372_p2         |     *    |      0|  0|  41|           2|           8|
+    |i_V_fu_1409_p2           |     +    |      0|  0|  15|           5|           1|
+    |j_V_fu_1352_p2           |     +    |      0|  0|  10|           2|           1|
+    |k_V_fu_1419_p2           |     +    |      0|  0|  15|           7|           7|
+    |y_V_fu_1486_p2           |     +    |      0|  0|  15|           8|           8|
+    |sub_ln214_fu_1397_p2     |     -    |      0|  0|  15|           7|           7|
+    |icmp_ln887_1_fu_1403_p2  |   icmp   |      0|  0|  11|           5|           3|
+    |icmp_ln887_fu_1346_p2    |   icmp   |      0|  0|   8|           2|           2|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |Total                    |          |      0|  0| 138|          40|          39|
+    +-------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------+----+-----------+-----+-----------+
+    |      Name      | LUT| Input Size| Bits| Total Bits|
+    +----------------+----+-----------+-----+-----------+
+    |ap_NS_fsm       |  17|          4|    1|          4|
+    |t_V_1_reg_1313  |   9|          2|    5|         10|
+    |t_V_reg_1302    |   9|          2|    2|          4|
+    +----------------+----+-----------+-----+-----------+
+    |Total           |  35|          8|    8|         18|
+    +----------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------+---+----+-----+-----------+
+    |          Name         | FF| LUT| Bits| Const Bits|
+    +-----------------------+---+----+-----+-----------+
+    |ap_CS_fsm              |  3|   0|    3|          0|
+    |j_V_reg_1605           |  2|   0|    2|          0|
+    |sub_ln214_reg_1635     |  6|   0|    7|          1|
+    |t_V_1_reg_1313         |  5|   0|    5|          0|
+    |t_V_reg_1302           |  2|   0|    2|          0|
+    |tmp_V_reg_1630         |  8|   0|    8|          0|
+    |zext_ln209_1_reg_1592  |  2|   0|    8|          6|
+    |zext_ln209_3_reg_1597  |  4|   0|    8|          4|
+    |zext_ln209_reg_1587    |  2|   0|    8|          6|
+    +-----------------------+---+----+-----+-----------+
+    |Total                  | 34|   0|   51|         17|
+    +-----------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------+-----+-----+------------+--------------+--------------+
+|    RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------+-----+-----+------------+--------------+--------------+
+|ap_clk           |  in |    1| ap_ctrl_hs |   lec6Ex2a   | return value |
+|ap_rst           |  in |    1| ap_ctrl_hs |   lec6Ex2a   | return value |
+|ap_start         |  in |    1| ap_ctrl_hs |   lec6Ex2a   | return value |
+|ap_done          | out |    1| ap_ctrl_hs |   lec6Ex2a   | return value |
+|ap_idle          | out |    1| ap_ctrl_hs |   lec6Ex2a   | return value |
+|ap_ready         | out |    1| ap_ctrl_hs |   lec6Ex2a   | return value |
+|in_0_V           |  in |    8|   ap_none  |    in_0_V    |    pointer   |
+|in_1_V           |  in |    8|   ap_none  |    in_1_V    |    pointer   |
+|in_2_V           |  in |    8|   ap_none  |    in_2_V    |    pointer   |
+|in_3_V           |  in |    8|   ap_none  |    in_3_V    |    pointer   |
+|in_4_V           |  in |    8|   ap_none  |    in_4_V    |    pointer   |
+|in_5_V           |  in |    8|   ap_none  |    in_5_V    |    pointer   |
+|in_6_V           |  in |    8|   ap_none  |    in_6_V    |    pointer   |
+|in_7_V           |  in |    8|   ap_none  |    in_7_V    |    pointer   |
+|in_8_V           |  in |    8|   ap_none  |    in_8_V    |    pointer   |
+|in_9_V           |  in |    8|   ap_none  |    in_9_V    |    pointer   |
+|in_10_V          |  in |    8|   ap_none  |    in_10_V   |    pointer   |
+|in_11_V          |  in |    8|   ap_none  |    in_11_V   |    pointer   |
+|in_12_V          |  in |    8|   ap_none  |    in_12_V   |    pointer   |
+|in_13_V          |  in |    8|   ap_none  |    in_13_V   |    pointer   |
+|in_14_V          |  in |    8|   ap_none  |    in_14_V   |    pointer   |
+|in_15_V          |  in |    8|   ap_none  |    in_15_V   |    pointer   |
+|in_16_V          |  in |    8|   ap_none  |    in_16_V   |    pointer   |
+|in_17_V          |  in |    8|   ap_none  |    in_17_V   |    pointer   |
+|in_18_V          |  in |    8|   ap_none  |    in_18_V   |    pointer   |
+|in_19_V          |  in |    8|   ap_none  |    in_19_V   |    pointer   |
+|in_20_V          |  in |    8|   ap_none  |    in_20_V   |    pointer   |
+|in_21_V          |  in |    8|   ap_none  |    in_21_V   |    pointer   |
+|in_22_V          |  in |    8|   ap_none  |    in_22_V   |    pointer   |
+|in_23_V          |  in |    8|   ap_none  |    in_23_V   |    pointer   |
+|in_24_V          |  in |    8|   ap_none  |    in_24_V   |    pointer   |
+|in_25_V          |  in |    8|   ap_none  |    in_25_V   |    pointer   |
+|in_26_V          |  in |    8|   ap_none  |    in_26_V   |    pointer   |
+|in_27_V          |  in |    8|   ap_none  |    in_27_V   |    pointer   |
+|in_28_V          |  in |    8|   ap_none  |    in_28_V   |    pointer   |
+|in_29_V          |  in |    8|   ap_none  |    in_29_V   |    pointer   |
+|a_V              |  in |    2|   ap_none  |      a_V     |    scalar    |
+|b_V              |  in |    2|   ap_none  |      b_V     |    scalar    |
+|c_V              |  in |    2|   ap_none  |      c_V     |    scalar    |
+|out_0_V          | out |    8|   ap_vld   |    out_0_V   |    pointer   |
+|out_0_V_ap_vld   | out |    1|   ap_vld   |    out_0_V   |    pointer   |
+|out_1_V          | out |    8|   ap_vld   |    out_1_V   |    pointer   |
+|out_1_V_ap_vld   | out |    1|   ap_vld   |    out_1_V   |    pointer   |
+|out_2_V          | out |    8|   ap_vld   |    out_2_V   |    pointer   |
+|out_2_V_ap_vld   | out |    1|   ap_vld   |    out_2_V   |    pointer   |
+|out_3_V          | out |    8|   ap_vld   |    out_3_V   |    pointer   |
+|out_3_V_ap_vld   | out |    1|   ap_vld   |    out_3_V   |    pointer   |
+|out_4_V          | out |    8|   ap_vld   |    out_4_V   |    pointer   |
+|out_4_V_ap_vld   | out |    1|   ap_vld   |    out_4_V   |    pointer   |
+|out_5_V          | out |    8|   ap_vld   |    out_5_V   |    pointer   |
+|out_5_V_ap_vld   | out |    1|   ap_vld   |    out_5_V   |    pointer   |
+|out_6_V          | out |    8|   ap_vld   |    out_6_V   |    pointer   |
+|out_6_V_ap_vld   | out |    1|   ap_vld   |    out_6_V   |    pointer   |
+|out_7_V          | out |    8|   ap_vld   |    out_7_V   |    pointer   |
+|out_7_V_ap_vld   | out |    1|   ap_vld   |    out_7_V   |    pointer   |
+|out_8_V          | out |    8|   ap_vld   |    out_8_V   |    pointer   |
+|out_8_V_ap_vld   | out |    1|   ap_vld   |    out_8_V   |    pointer   |
+|out_9_V          | out |    8|   ap_vld   |    out_9_V   |    pointer   |
+|out_9_V_ap_vld   | out |    1|   ap_vld   |    out_9_V   |    pointer   |
+|out_10_V         | out |    8|   ap_vld   |   out_10_V   |    pointer   |
+|out_10_V_ap_vld  | out |    1|   ap_vld   |   out_10_V   |    pointer   |
+|out_11_V         | out |    8|   ap_vld   |   out_11_V   |    pointer   |
+|out_11_V_ap_vld  | out |    1|   ap_vld   |   out_11_V   |    pointer   |
+|out_12_V         | out |    8|   ap_vld   |   out_12_V   |    pointer   |
+|out_12_V_ap_vld  | out |    1|   ap_vld   |   out_12_V   |    pointer   |
+|out_13_V         | out |    8|   ap_vld   |   out_13_V   |    pointer   |
+|out_13_V_ap_vld  | out |    1|   ap_vld   |   out_13_V   |    pointer   |
+|out_14_V         | out |    8|   ap_vld   |   out_14_V   |    pointer   |
+|out_14_V_ap_vld  | out |    1|   ap_vld   |   out_14_V   |    pointer   |
+|out_15_V         | out |    8|   ap_vld   |   out_15_V   |    pointer   |
+|out_15_V_ap_vld  | out |    1|   ap_vld   |   out_15_V   |    pointer   |
+|out_16_V         | out |    8|   ap_vld   |   out_16_V   |    pointer   |
+|out_16_V_ap_vld  | out |    1|   ap_vld   |   out_16_V   |    pointer   |
+|out_17_V         | out |    8|   ap_vld   |   out_17_V   |    pointer   |
+|out_17_V_ap_vld  | out |    1|   ap_vld   |   out_17_V   |    pointer   |
+|out_18_V         | out |    8|   ap_vld   |   out_18_V   |    pointer   |
+|out_18_V_ap_vld  | out |    1|   ap_vld   |   out_18_V   |    pointer   |
+|out_19_V         | out |    8|   ap_vld   |   out_19_V   |    pointer   |
+|out_19_V_ap_vld  | out |    1|   ap_vld   |   out_19_V   |    pointer   |
+|out_20_V         | out |    8|   ap_vld   |   out_20_V   |    pointer   |
+|out_20_V_ap_vld  | out |    1|   ap_vld   |   out_20_V   |    pointer   |
+|out_21_V         | out |    8|   ap_vld   |   out_21_V   |    pointer   |
+|out_21_V_ap_vld  | out |    1|   ap_vld   |   out_21_V   |    pointer   |
+|out_22_V         | out |    8|   ap_vld   |   out_22_V   |    pointer   |
+|out_22_V_ap_vld  | out |    1|   ap_vld   |   out_22_V   |    pointer   |
+|out_23_V         | out |    8|   ap_vld   |   out_23_V   |    pointer   |
+|out_23_V_ap_vld  | out |    1|   ap_vld   |   out_23_V   |    pointer   |
+|out_24_V         | out |    8|   ap_vld   |   out_24_V   |    pointer   |
+|out_24_V_ap_vld  | out |    1|   ap_vld   |   out_24_V   |    pointer   |
+|out_25_V         | out |    8|   ap_vld   |   out_25_V   |    pointer   |
+|out_25_V_ap_vld  | out |    1|   ap_vld   |   out_25_V   |    pointer   |
+|out_26_V         | out |    8|   ap_vld   |   out_26_V   |    pointer   |
+|out_26_V_ap_vld  | out |    1|   ap_vld   |   out_26_V   |    pointer   |
+|out_27_V         | out |    8|   ap_vld   |   out_27_V   |    pointer   |
+|out_27_V_ap_vld  | out |    1|   ap_vld   |   out_27_V   |    pointer   |
+|out_28_V         | out |    8|   ap_vld   |   out_28_V   |    pointer   |
+|out_28_V_ap_vld  | out |    1|   ap_vld   |   out_28_V   |    pointer   |
+|out_29_V         | out |    8|   ap_vld   |   out_29_V   |    pointer   |
+|out_29_V_ap_vld  | out |    1|   ap_vld   |   out_29_V   |    pointer   |
+|out_30_V         | out |    8|   ap_vld   |   out_30_V   |    pointer   |
+|out_30_V_ap_vld  | out |    1|   ap_vld   |   out_30_V   |    pointer   |
+|out_31_V         | out |    8|   ap_vld   |   out_31_V   |    pointer   |
+|out_31_V_ap_vld  | out |    1|   ap_vld   |   out_31_V   |    pointer   |
+|out_32_V         | out |    8|   ap_vld   |   out_32_V   |    pointer   |
+|out_32_V_ap_vld  | out |    1|   ap_vld   |   out_32_V   |    pointer   |
+|out_33_V         | out |    8|   ap_vld   |   out_33_V   |    pointer   |
+|out_33_V_ap_vld  | out |    1|   ap_vld   |   out_33_V   |    pointer   |
+|out_34_V         | out |    8|   ap_vld   |   out_34_V   |    pointer   |
+|out_34_V_ap_vld  | out |    1|   ap_vld   |   out_34_V   |    pointer   |
+|out_35_V         | out |    8|   ap_vld   |   out_35_V   |    pointer   |
+|out_35_V_ap_vld  | out |    1|   ap_vld   |   out_35_V   |    pointer   |
+|out_36_V         | out |    8|   ap_vld   |   out_36_V   |    pointer   |
+|out_36_V_ap_vld  | out |    1|   ap_vld   |   out_36_V   |    pointer   |
+|out_37_V         | out |    8|   ap_vld   |   out_37_V   |    pointer   |
+|out_37_V_ap_vld  | out |    1|   ap_vld   |   out_37_V   |    pointer   |
+|out_38_V         | out |    8|   ap_vld   |   out_38_V   |    pointer   |
+|out_38_V_ap_vld  | out |    1|   ap_vld   |   out_38_V   |    pointer   |
+|out_39_V         | out |    8|   ap_vld   |   out_39_V   |    pointer   |
+|out_39_V_ap_vld  | out |    1|   ap_vld   |   out_39_V   |    pointer   |
+|out_40_V         | out |    8|   ap_vld   |   out_40_V   |    pointer   |
+|out_40_V_ap_vld  | out |    1|   ap_vld   |   out_40_V   |    pointer   |
+|out_41_V         | out |    8|   ap_vld   |   out_41_V   |    pointer   |
+|out_41_V_ap_vld  | out |    1|   ap_vld   |   out_41_V   |    pointer   |
+|out_42_V         | out |    8|   ap_vld   |   out_42_V   |    pointer   |
+|out_42_V_ap_vld  | out |    1|   ap_vld   |   out_42_V   |    pointer   |
+|out_43_V         | out |    8|   ap_vld   |   out_43_V   |    pointer   |
+|out_43_V_ap_vld  | out |    1|   ap_vld   |   out_43_V   |    pointer   |
+|out_44_V         | out |    8|   ap_vld   |   out_44_V   |    pointer   |
+|out_44_V_ap_vld  | out |    1|   ap_vld   |   out_44_V   |    pointer   |
+|out_45_V         | out |    8|   ap_vld   |   out_45_V   |    pointer   |
+|out_45_V_ap_vld  | out |    1|   ap_vld   |   out_45_V   |    pointer   |
+|out_46_V         | out |    8|   ap_vld   |   out_46_V   |    pointer   |
+|out_46_V_ap_vld  | out |    1|   ap_vld   |   out_46_V   |    pointer   |
+|out_47_V         | out |    8|   ap_vld   |   out_47_V   |    pointer   |
+|out_47_V_ap_vld  | out |    1|   ap_vld   |   out_47_V   |    pointer   |
+|out_48_V         | out |    8|   ap_vld   |   out_48_V   |    pointer   |
+|out_48_V_ap_vld  | out |    1|   ap_vld   |   out_48_V   |    pointer   |
+|out_49_V         | out |    8|   ap_vld   |   out_49_V   |    pointer   |
+|out_49_V_ap_vld  | out |    1|   ap_vld   |   out_49_V   |    pointer   |
+|out_50_V         | out |    8|   ap_vld   |   out_50_V   |    pointer   |
+|out_50_V_ap_vld  | out |    1|   ap_vld   |   out_50_V   |    pointer   |
+|out_51_V         | out |    8|   ap_vld   |   out_51_V   |    pointer   |
+|out_51_V_ap_vld  | out |    1|   ap_vld   |   out_51_V   |    pointer   |
+|out_52_V         | out |    8|   ap_vld   |   out_52_V   |    pointer   |
+|out_52_V_ap_vld  | out |    1|   ap_vld   |   out_52_V   |    pointer   |
+|out_53_V         | out |    8|   ap_vld   |   out_53_V   |    pointer   |
+|out_53_V_ap_vld  | out |    1|   ap_vld   |   out_53_V   |    pointer   |
+|out_54_V         | out |    8|   ap_vld   |   out_54_V   |    pointer   |
+|out_54_V_ap_vld  | out |    1|   ap_vld   |   out_54_V   |    pointer   |
+|out_55_V         | out |    8|   ap_vld   |   out_55_V   |    pointer   |
+|out_55_V_ap_vld  | out |    1|   ap_vld   |   out_55_V   |    pointer   |
+|out_56_V         | out |    8|   ap_vld   |   out_56_V   |    pointer   |
+|out_56_V_ap_vld  | out |    1|   ap_vld   |   out_56_V   |    pointer   |
+|out_57_V         | out |    8|   ap_vld   |   out_57_V   |    pointer   |
+|out_57_V_ap_vld  | out |    1|   ap_vld   |   out_57_V   |    pointer   |
+|out_58_V         | out |    8|   ap_vld   |   out_58_V   |    pointer   |
+|out_58_V_ap_vld  | out |    1|   ap_vld   |   out_58_V   |    pointer   |
+|out_59_V         | out |    8|   ap_vld   |   out_59_V   |    pointer   |
+|out_59_V_ap_vld  | out |    1|   ap_vld   |   out_59_V   |    pointer   |
+|out_60_V         | out |    8|   ap_vld   |   out_60_V   |    pointer   |
+|out_60_V_ap_vld  | out |    1|   ap_vld   |   out_60_V   |    pointer   |
+|out_61_V         | out |    8|   ap_vld   |   out_61_V   |    pointer   |
+|out_61_V_ap_vld  | out |    1|   ap_vld   |   out_61_V   |    pointer   |
+|out_62_V         | out |    8|   ap_vld   |   out_62_V   |    pointer   |
+|out_62_V_ap_vld  | out |    1|   ap_vld   |   out_62_V   |    pointer   |
+|out_63_V         | out |    8|   ap_vld   |   out_63_V   |    pointer   |
+|out_63_V_ap_vld  | out |    1|   ap_vld   |   out_63_V   |    pointer   |
+|out_64_V         | out |    8|   ap_vld   |   out_64_V   |    pointer   |
+|out_64_V_ap_vld  | out |    1|   ap_vld   |   out_64_V   |    pointer   |
+|out_65_V         | out |    8|   ap_vld   |   out_65_V   |    pointer   |
+|out_65_V_ap_vld  | out |    1|   ap_vld   |   out_65_V   |    pointer   |
+|out_66_V         | out |    8|   ap_vld   |   out_66_V   |    pointer   |
+|out_66_V_ap_vld  | out |    1|   ap_vld   |   out_66_V   |    pointer   |
+|out_67_V         | out |    8|   ap_vld   |   out_67_V   |    pointer   |
+|out_67_V_ap_vld  | out |    1|   ap_vld   |   out_67_V   |    pointer   |
+|out_68_V         | out |    8|   ap_vld   |   out_68_V   |    pointer   |
+|out_68_V_ap_vld  | out |    1|   ap_vld   |   out_68_V   |    pointer   |
+|out_69_V         | out |    8|   ap_vld   |   out_69_V   |    pointer   |
+|out_69_V_ap_vld  | out |    1|   ap_vld   |   out_69_V   |    pointer   |
+|out_70_V         | out |    8|   ap_vld   |   out_70_V   |    pointer   |
+|out_70_V_ap_vld  | out |    1|   ap_vld   |   out_70_V   |    pointer   |
+|out_71_V         | out |    8|   ap_vld   |   out_71_V   |    pointer   |
+|out_71_V_ap_vld  | out |    1|   ap_vld   |   out_71_V   |    pointer   |
+|out_72_V         | out |    8|   ap_vld   |   out_72_V   |    pointer   |
+|out_72_V_ap_vld  | out |    1|   ap_vld   |   out_72_V   |    pointer   |
+|out_73_V         | out |    8|   ap_vld   |   out_73_V   |    pointer   |
+|out_73_V_ap_vld  | out |    1|   ap_vld   |   out_73_V   |    pointer   |
+|out_74_V         | out |    8|   ap_vld   |   out_74_V   |    pointer   |
+|out_74_V_ap_vld  | out |    1|   ap_vld   |   out_74_V   |    pointer   |
+|out_75_V         | out |    8|   ap_vld   |   out_75_V   |    pointer   |
+|out_75_V_ap_vld  | out |    1|   ap_vld   |   out_75_V   |    pointer   |
+|out_76_V         | out |    8|   ap_vld   |   out_76_V   |    pointer   |
+|out_76_V_ap_vld  | out |    1|   ap_vld   |   out_76_V   |    pointer   |
+|out_77_V         | out |    8|   ap_vld   |   out_77_V   |    pointer   |
+|out_77_V_ap_vld  | out |    1|   ap_vld   |   out_77_V   |    pointer   |
+|out_78_V         | out |    8|   ap_vld   |   out_78_V   |    pointer   |
+|out_78_V_ap_vld  | out |    1|   ap_vld   |   out_78_V   |    pointer   |
+|out_79_V         | out |    8|   ap_vld   |   out_79_V   |    pointer   |
+|out_79_V_ap_vld  | out |    1|   ap_vld   |   out_79_V   |    pointer   |
+|out_80_V         | out |    8|   ap_vld   |   out_80_V   |    pointer   |
+|out_80_V_ap_vld  | out |    1|   ap_vld   |   out_80_V   |    pointer   |
+|out_81_V         | out |    8|   ap_vld   |   out_81_V   |    pointer   |
+|out_81_V_ap_vld  | out |    1|   ap_vld   |   out_81_V   |    pointer   |
+|out_82_V         | out |    8|   ap_vld   |   out_82_V   |    pointer   |
+|out_82_V_ap_vld  | out |    1|   ap_vld   |   out_82_V   |    pointer   |
+|out_83_V         | out |    8|   ap_vld   |   out_83_V   |    pointer   |
+|out_83_V_ap_vld  | out |    1|   ap_vld   |   out_83_V   |    pointer   |
+|out_84_V         | out |    8|   ap_vld   |   out_84_V   |    pointer   |
+|out_84_V_ap_vld  | out |    1|   ap_vld   |   out_84_V   |    pointer   |
+|out_85_V         | out |    8|   ap_vld   |   out_85_V   |    pointer   |
+|out_85_V_ap_vld  | out |    1|   ap_vld   |   out_85_V   |    pointer   |
+|out_86_V         | out |    8|   ap_vld   |   out_86_V   |    pointer   |
+|out_86_V_ap_vld  | out |    1|   ap_vld   |   out_86_V   |    pointer   |
+|out_87_V         | out |    8|   ap_vld   |   out_87_V   |    pointer   |
+|out_87_V_ap_vld  | out |    1|   ap_vld   |   out_87_V   |    pointer   |
+|out_88_V         | out |    8|   ap_vld   |   out_88_V   |    pointer   |
+|out_88_V_ap_vld  | out |    1|   ap_vld   |   out_88_V   |    pointer   |
+|out_89_V         | out |    8|   ap_vld   |   out_89_V   |    pointer   |
+|out_89_V_ap_vld  | out |    1|   ap_vld   |   out_89_V   |    pointer   |
++-----------------+-----+-----+------------+--------------+--------------+
+

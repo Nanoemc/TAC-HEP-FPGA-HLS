@@ -1,0 +1,42 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../lec6Ex2a_test.cpp in debug mode
+   Generating csim.exe
+--------------
+0, input: 4229901536
+1, input: 4229901537
+2, input: 4229901538
+3, input: 4229901539
+4, input: 4229901540
+5, input: 4229901541
+6, input: 4229901542
+7, input: 4229901543
+8, input: 4229901544
+9, input: 4229901545
+10, input: 4229901546
+11, input: 4229901547
+12, input: 4229901548
+13, input: 4229901549
+14, input: 4229901550
+15, input: 4229901551
+16, input: 4229901552
+17, input: 4229901553
+18, input: 4229901554
+19, input: 4229901555
+20, input: 4229901556
+21, input: 4229901557
+22, input: 4229901558
+23, input: 4229901559
+24, input: 4229901560
+25, input: 4229901561
+26, input: 4229901562
+27, input: 4229901563
+28, input: 4229901564
+29, input: 4229901565
+--------------
+Comparing against output data 
+*******************************************
+PASS: The output matches the reference output!
+*******************************************
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
